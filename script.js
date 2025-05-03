@@ -1,0 +1,1 @@
+// JavaScript for interactivity on the landing page
