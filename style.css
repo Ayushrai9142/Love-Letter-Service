@@ -1,1 +1,112 @@
-/* CSS styles for the landing page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.navbar {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+}
+
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background: white;
+  color: #e91e63;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.cta:hover {
+  background: #f2f2f2;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+  background: #fff;
+}
+
+.feature-card {
+  background: #fdfdfd;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  max-width: 300px;
+  text-align: center;
+}
+
+.gallery {
+  padding: 2rem;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 2rem;
+  color: #e91e63;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.grid img {
+  width: 200px;
+  border-radius: 12px;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
