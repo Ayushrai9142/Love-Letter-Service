@@ -1,1 +1,1 @@
-This is a simple and visually appealing love letter generator/sender website where users can write personalized love letters, preview them live, and download as PDF or create a shareable link. The design is mobile-first with clean fonts, soft colors, and a user-friendly interface.
+This is a simple and visually appealing love letter generator/sender website where users can write personalized love letters, preview them live, The design is mobile-first with clean fonts, soft colors, and a user-friendly interface.
