@@ -4,69 +4,87 @@
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background: #fff5f8;
   line-height: 1.6;
-  background: #f9f9f9;
+  color: #333;
 }
-header {
+.ay-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 30px;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ff4d6d;
+.ay-logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e91e63;
 }
-nav a {
+.ay-nav-link {
   margin-left: 20px;
   text-decoration: none;
-  color: #333;
+  color: #555;
   font-weight: 500;
+  transition: color 0.3s;
 }
-.hero {
+.ay-nav-link:hover {
+  color: #e91e63;
+}
+.ay-hero {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(120deg, #ffe0e9, #ffccd5);
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #ffe0e9, #ffd1da);
 }
-.hero h1 {
-  font-size: 36px;
+.ay-hero h1 {
+  font-size: 38px;
   color: #222;
 }
-.hero p {
+.ay-hero p {
   margin: 20px 0;
   font-size: 18px;
 }
-.btn {
+.ay-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #ff4d6d;
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #e91e63;
   color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: transform 0.3s, background 0.3s;
 }
-.features {
+.ay-btn:hover {
+  background: #d81b60;
+  transform: scale(1.05);
+}
+.ay-features {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 40px 20px;
+  justify-content: center;
+  padding: 50px 20px;
   background: #fff;
 }
-.feature-box {
-  width: 300px;
+.ay-feature-box {
+  width: 280px;
   margin: 20px;
-  padding: 20px;
-  background: #fce4ec;
-  border-radius: 8px;
+  padding: 25px;
+  background: #ffe4ec;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-footer {
+.ay-feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.ay-footer {
   text-align: center;
-  padding: 20px;
-  background: #ffdde1;
+  padding: 25px 20px;
+  background: #ffdce2;
   margin-top: 40px;
+  font-size: 16px;
 }
