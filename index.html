@@ -4,42 +4,156 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AR Love Letters</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --color-bg: #fdf6f0;
+      --color-text: #333;
+      --color-primary: #ff6f61;
+      --color-primary-hover: #e85c50;
+      --color-card: #ffe8e5;
+      --color-footer: #ffe0de;
+      --color-hero: linear-gradient(135deg, #ffe0e0, #ffdede);
+    }
+    [data-theme="dark"] {
+      --color-bg: #1c1c1c;
+      --color-text: #f1f1f1;
+      --color-primary: #ff8a80;
+      --color-primary-hover: #ff5252;
+      --color-card: #2a2a2a;
+      --color-footer: #1f1f1f;
+      --color-hero: linear-gradient(135deg, #333, #444);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+      scroll-behavior: smooth;
+      overflow-x:hidden;
+    }
+
+    .ar-header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 30px;
+      background:#fff;
+      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s, color 0.3s;
+      position: sticky; top:0; z-index:100;
+    }
+    [data-theme="dark"] .ar-header { background:#222; }
+    .ar-logo { font-size:28px; font-weight:700; color:var(--color-primary); }
+    .ar-nav-link {
+      margin-left:20px; text-decoration:none; color:var(--color-text); font-weight:500;
+      transition: color 0.3s;
+    }
+    .ar-nav-link:hover { color:var(--color-primary); }
+    .ar-theme-toggle {
+      margin-left:20px; cursor:pointer; font-weight:600;
+      background:var(--color-primary); color:#fff; border:none; padding:6px 12px;
+      border-radius:6px; transition: transform 0.2s, background 0.3s;
+    }
+    .ar-theme-toggle:hover { transform:scale(1.05); background:var(--color-primary-hover); }
+
+    .ar-hero {
+      text-align:center; padding:90px 20px;
+      background:var(--color-hero);
+      border-bottom-left-radius:50% 10%;
+      border-bottom-right-radius:50% 10%;
+      transition: background 0.3s;
+      opacity:0; transform: translateY(30px); animation: fadeIn 1s forwards 0.2s;
+    }
+    .ar-hero h1 { font-size:40px; color:var(--color-text); margin-bottom:15px; }
+    .ar-hero p { margin:20px 0; font-size:18px; }
+
+    .ar-btn {
+      display:inline-block; margin-top:25px; padding:14px 30px;
+      background:var(--color-primary); color:white; text-decoration:none;
+      border-radius:10px; font-weight:500;
+      transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    }
+    .ar-btn:hover {
+      background:var(--color-primary-hover); transform:scale(1.05);
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .ar-features {
+      display:flex; flex-wrap:wrap; justify-content:center; padding:60px 20px;
+      background:var(--color-bg); transition: background 0.3s;
+    }
+    .ar-feature-box {
+      width:300px; margin:20px; padding:30px; background:var(--color-card);
+      border-radius:15px; text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      opacity:0; transform: translateY(20px); animation: fadeIn 0.8s forwards;
+    }
+    .ar-feature-box:nth-child(1) { animation-delay:0.3s; }
+    .ar-feature-box:nth-child(2) { animation-delay:0.5s; }
+    .ar-feature-box:nth-child(3) { animation-delay:0.7s; }
+    .ar-feature-box:hover {
+      transform: translateY(-7px); box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .ar-footer {
+      text-align:center; padding:30px 20px; background:var(--color-footer);
+      margin-top:40px; font-size:16px; transition: background 0.3s;
+      opacity:0; transform: translateY(20px); animation: fadeIn 1s forwards 1s;
+    }
+
+    @keyframes fadeIn { to { opacity:1; transform:translateY(0); } }
+
+    @media(max-width:768px){
+      .ar-features{ flex-direction:column; align-items:center; }
+      .ar-feature-box{ width:90%; }
+    }
+  </style>
 </head>
 <body>
-  <header class="ay-header">
-    <div class="ay-logo">AR LoveLetters</div>
-    <nav class="ay-nav">
-      <a href="https://ayush-love.netlify.app/login.html" class="ay-nav-link">Login</a>
-      <a href="https://ayush-love.netlify.app/signup.html" class="ay-nav-link">Sign Up</a>
+  <header class="ar-header">
+    <div class="ar-logo">AR LoveLetters</div>
+    <nav>
+      <a href="https://ayush-love.netlify.app/login.html" class="ar-nav-link">Login</a>
+      <a href="https://ayush-love.netlify.app/signup.html" class="ar-nav-link">Sign Up</a>
+      <button class="ar-theme-toggle" onclick="toggleTheme()">Dark Mode</button>
     </nav>
   </header>
 
-  <section class="ay-hero">
+  <section class="ar-hero">
     <h1>Create Heartfelt Love Letters</h1>
     <p>Personalize letters effortlessly and make them truly yours.</p>
-    <a href="https://in.linkedin.com/in/ayushrai9142" class="ay-btn">Visit My Profile</a>
+    <a href="https://in.linkedin.com/in/ayushrai9142" class="ar-btn">Visit My Profile</a>
   </section>
 
-  <section class="ay-features">
-    <div class="ay-feature-box">
+  <section class="ar-features">
+    <div class="ar-feature-box">
       <h3>AI-Powered</h3>
       <p>Generate meaningful letters instantly.</p>
     </div>
-    <div class="ay-feature-box">
+    <div class="ar-feature-box">
       <h3>Secure & Private</h3>
       <p>Your words are never saved and completely private.</p>
     </div>
-    <div class="ay-feature-box">
+    <div class="ar-feature-box">
       <h3>Customizable</h3>
       <p>Edit letters with your own touch and style.</p>
     </div>
   </section>
 
-  <footer class="ay-footer">
-    <p>Log in to access your personalized letters. Visit my profile for account details.</p>
+  <footer class="ar-footer">
+    <p>Log in to access your personalized letters. Visit your profile for account details.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    function toggleTheme(){
+      if(document.documentElement.getAttribute('data-theme')==='dark'){
+        document.documentElement.removeAttribute('data-theme');
+      }else{
+        document.documentElement.setAttribute('data-theme','dark');
+      }
+    }
+  </script>
 </body>
 </html>
