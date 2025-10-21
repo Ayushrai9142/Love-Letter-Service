@@ -25,6 +25,7 @@
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--color-bg);
@@ -35,21 +36,25 @@
       overflow-x:hidden;
     }
 
+    /* HEADER */
     .ar-header {
       display:flex; justify-content:space-between; align-items:center;
       padding:20px 30px;
       background:#fff;
       box-shadow:0 3px 10px rgba(0,0,0,0.1);
-      transition: background 0.3s, color 0.3s;
       position: sticky; top:0; z-index:100;
+      transition: background 0.3s, color 0.3s;
     }
     [data-theme="dark"] .ar-header { background:#222; }
+
     .ar-logo { font-size:28px; font-weight:700; color:var(--color-primary); }
+
     .ar-nav-link {
       margin-left:20px; text-decoration:none; color:var(--color-text); font-weight:500;
       transition: color 0.3s;
     }
     .ar-nav-link:hover { color:var(--color-primary); }
+
     .ar-theme-toggle {
       margin-left:20px; cursor:pointer; font-weight:600;
       background:var(--color-primary); color:#fff; border:none; padding:6px 12px;
@@ -57,6 +62,7 @@
     }
     .ar-theme-toggle:hover { transform:scale(1.05); background:var(--color-primary-hover); }
 
+    /* HERO */
     .ar-hero {
       text-align:center; padding:90px 20px;
       background:var(--color-hero);
@@ -79,6 +85,7 @@
       box-shadow:0 8px 20px rgba(0,0,0,0.2);
     }
 
+    /* FEATURES */
     .ar-features {
       display:flex; flex-wrap:wrap; justify-content:center; padding:60px 20px;
       background:var(--color-bg); transition: background 0.3s;
@@ -97,6 +104,7 @@
       transform: translateY(-7px); box-shadow:0 8px 20px rgba(0,0,0,0.12);
     }
 
+    /* FOOTER */
     .ar-footer {
       text-align:center; padding:30px 20px; background:var(--color-footer);
       margin-top:40px; font-size:16px; transition: background 0.3s;
@@ -105,9 +113,70 @@
 
     @keyframes fadeIn { to { opacity:1; transform:translateY(0); } }
 
-    @media(max-width:768px){
-      .ar-features{ flex-direction:column; align-items:center; }
-      .ar-feature-box{ width:90%; }
+    /* ✅ RESPONSIVE DESIGN */
+    @media (max-width: 900px) {
+      .ar-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+        text-align: center;
+      }
+
+      .ar-logo {
+        font-size: 24px;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .ar-nav-link {
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .ar-theme-toggle {
+        margin: 0;
+        font-size: 15px;
+        padding: 6px 10px;
+      }
+
+      .ar-hero {
+        padding: 60px 15px;
+      }
+
+      .ar-hero h1 {
+        font-size: 28px;
+      }
+
+      .ar-hero p {
+        font-size: 16px;
+      }
+
+      .ar-btn {
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+
+      .ar-feature-box {
+        width: 90%;
+        margin: 15px 0;
+        padding: 20px;
+      }
+
+      .ar-footer {
+        font-size: 14px;
+        padding: 25px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ar-hero h1 { font-size: 24px; }
+      .ar-hero p { font-size: 15px; }
+      .ar-btn { font-size: 14px; }
     }
   </style>
 </head>
@@ -143,7 +212,7 @@
   </section>
 
   <footer class="ar-footer">
-    <P>Log in to access your personalized letters. Visit my linkedin profile for account details.</P>
+    <p>Log in to access your personalized letters. Visit my LinkedIn profile for account details.</p>
   </footer>
 
   <script>
